@@ -16,10 +16,11 @@ public class Client {
         System.out.println("Client Initialized");
 
         try {
+            System.out.println("Fetching Server Connection...");
             InetAddress address = InetAddress.getByName(host);
             Socket connection1 = new Socket(address, port);
             Socket connection2 = new Socket(address, port);
-
+            System.out.println("Connection Established.");
 
             OutputStream sendToServer1 = connection1.getOutputStream();
             DataOutputStream send1 = new DataOutputStream(sendToServer1);

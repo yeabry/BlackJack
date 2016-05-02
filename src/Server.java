@@ -33,6 +33,7 @@ public class Server {
                 DataInputStream inputFromClient2 = new DataInputStream(connection2.getInputStream());
                 DataOutputStream replyToClient2 = new DataOutputStream(connection2.getOutputStream());
                 System.out.println("Found Client 2.");
+                System.out.println("Initiating Game...");
 
                 while(win == false) {
                     // TODO: Put game code here
