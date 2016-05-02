@@ -17,13 +17,21 @@ public class Client {
 
         try {
             InetAddress address = InetAddress.getByName(host);
-            Socket connection = new Socket(address, port);
+            Socket connection1 = new Socket(address, port);
+            Socket connection2 = new Socket(address, port);
 
-            OutputStream sendToServer = connection.getOutputStream();
-            DataOutputStream send = new DataOutputStream(sendToServer);
 
-            InputStream inFromServer = connection.getInputStream();
-            DataInputStream serverReply = new DataInputStream(inFromServer);
+            OutputStream sendToServer1 = connection1.getOutputStream();
+            DataOutputStream send1 = new DataOutputStream(sendToServer1);
+
+            OutputStream sendToServer2 = connection2.getOutputStream();
+            DataOutputStream send2 = new DataOutputStream(sendToServer2);
+
+            InputStream inFromServer1 = connection1.getInputStream();
+            DataInputStream serverReply = new DataInputStream(inFromServer1);
+
+            InputStream inFromServer2 = connection2.getInputStream();
+            DataInputStream serverReply2 = new DataInputStream(inFromServer2);
 
             while(win == false) {
                 System.out.println("It's your turn.  Enter 'H' for a Hit or 'S' to Stand.\n");
